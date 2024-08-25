@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+}
+
+.container {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #424242; /* Dark gray container background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #d32f2f; /* Darker red */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #e0e0e0;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #d32f2f; /* Darker red */
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+button:hover {
+  background-color: #b71c1c; /* Slightly darker red for hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.soon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ff8a65; /* Notification color */
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.timer-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg {
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg);
+  margin-top: 20px;
+}
+
+#circle-timer circle:nth-child(1) {
+  stroke: #616161; /* Light gray for background circle */
+}
+
+#circle-timer circle:nth-child(2) {
+  stroke: #d32f2f; /* Darker red for timer circle */
+}
+
+#timer-text {
+  margin-top: 20px;
+  font-size: 2.5rem;
+  color: #ffffff;
+}

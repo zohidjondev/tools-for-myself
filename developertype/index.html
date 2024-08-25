@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeveloperType</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="startMenu">
+      <h1>Typing Practice</h1>
+      <button id="loadJsonButton">Load JSON File with Words</button>
+      <button id="createJsonButton">Create JSON Words File</button>
+      <input type="file" id="fileInput" accept=".json" style="display: none;">
+    </div>
+    <div id="settingsMenu" style="display: none;">
+      <h2>Settings</h2>
+      <label for="repeatCount">Repeat each word: </label>
+      <input type="number" id="repeatCount" min="1" value="1">
+      <button id="startPracticeButton">Start Practice</button>
+    </div>
+    <div id="practiceArea" style="display: none;">
+      <div class="word-display" id="wordDisplay"></div>
+      <input type="text" id="inputField" autofocus autocomplete="off">
+    </div>
+    <div id="resultScreen" style="display: none;">
+      <h2>Results</h2>
+      <p id="resultText"></p>
+      <button id="restartSessionButton">Restart Session</button>
+      <button id="reloadJsonButton">Reload JSON File</button>
+    </div>
+    <div id="createJsonMenu" style="display: none;">
+      <h2>Create JSON Words File</h2>
+      <textarea id="wordsTextarea" rows="10" cols="30" placeholder="Enter words separated by spaces"></textarea>
+      <button id="saveJsonButton">Save JSON File</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

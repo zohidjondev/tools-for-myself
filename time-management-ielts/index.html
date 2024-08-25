@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IELTS Time Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="main-header">IELTS Time Management</h1>
+      </header>
+      <main>
+        <div class="buttons-container">
+          <button id="reading-button">Reading</button>
+          <button id="writing-button">
+            Writing <span class="soon">Soon</span>
+          </button>
+          <button id="speaking-button">
+            Speaking <span class="soon">Soon</span>
+          </button>
+        </div>
+        <div class="timer-container" id="timer-container">
+          <header>
+            <h2>IELTS Reading Time Management</h2>
+          </header>
+          <svg id="circle-timer" viewBox="0 0 100 100">
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="#333"
+              stroke-width="5"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="#76c7c0"
+              stroke-width="5"
+              fill="none"
+              stroke-dasharray="283"
+              stroke-dashoffset="283"
+            />
+          </svg>
+          <p id="timer-text">60:00</p>
+        </div>
+      </main>
+
+      <audio id="audio-40" src="audios/40-minutes.mp3"></audio>
+      <audio id="audio-20" src="audios/20-minutes.mp3"></audio>
+      <audio id="audio-0" src="audios/time-is-up.mp3"></audio>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
