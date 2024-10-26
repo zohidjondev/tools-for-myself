@@ -16,9 +16,15 @@ body {
   text-align: center;
 }
 
-.word-display {
-  font-size: 2rem;
+.text-display {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  white-space: pre-wrap; /* Ensures that the text wraps */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
+  max-height: 10rem; /* Restricts the height */
+  line-height: 2rem; /* Space between lines */
 }
 
 #inputField {
@@ -28,6 +34,7 @@ body {
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
+  width: 80%;
 }
 
 #inputField:focus {
@@ -49,18 +56,6 @@ button:hover {
   background-color: #252525;
 }
 
-#startMenu {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#settingsMenu input{
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  color: #121212;
-  background-color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+#resultScreen {
+  margin-top: 2rem;
 }
