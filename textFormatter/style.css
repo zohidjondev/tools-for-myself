@@ -1,0 +1,182 @@
+/* Basic styles with rounded, Google-inspired look */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  resize: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+textarea::-webkit-scrollbar {
+  width: 12px;
+}
+
+textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset #333;
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#output {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+#formattedText,
+#wordCount {
+  word-break: break-all;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #e9ecef;
+}
+
+#copyButton {
+  background-color: #34a853;
+}
+
+#copyButton:hover {
+  background-color: #2b8a3e;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ddd;
+}
+
+.dark .container {
+  background-color: #333;
+  color: #ddd;
+}
+
+.dark textarea,
+.dark #output {
+  background-color: #333;
+  color: #ddd;
+  border-color: #555;
+}
+
+.dark button {
+  background-color: #555;
+  color: #ddd;
+  border-color: #555;
+}
+
+.dark #copyButton {
+  background-color: #34a853;
+}
+
+.dark #formattedText,
+.dark #wordCount {
+  word-break: break-all;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #555;
+}
+
+/* Dark Mode Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-top: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.dark-mode-label {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}

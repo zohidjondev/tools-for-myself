@@ -3,49 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Interface</title>
+    <title>Tools for Myself</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
     <style>
-      body {
-        background-color: #f3f7ec;
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+      /* Import Google Font */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+      /* Basic style setup */
+      * {
         margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f3f7ec;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Container styling */
       .container {
         text-align: center;
+        margin-bottom: 20px;
       }
 
+      /* Button styling */
       .button {
         display: inline-block;
         margin: 10px;
         padding: 15px 30px;
         font-size: 18px;
-        color: white;
-        background-color: #006989;
+        color: #fff;
+        background-color: #4285f4;
         border: none;
-        border-radius: 5px;
+        border-radius: 30px;
         cursor: pointer;
         text-decoration: none;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.2s;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
 
       .button:hover {
-        background-color: #e88d67;
+        background-color: #2b7bf4;
+        transform: scale(1.05);
+      }
+
+      /* Dark Mode styles */
+      body.dark {
+        background-color: #121212;
+        color: #ddd;
+      }
+
+      .dark .button {
+        background-color: #34a853;
+      }
+
+      .dark .button:hover {
+        background-color: #2b8a3e;
+      }
+
+      /* Dark mode toggle switch */
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+        margin-top: 20px;
+      }
+
+      .switch input {
+        display: none;
+      }
+
+      .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+
+      input:checked + .slider {
+        background-color: #4285f4;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      /* Label for dark mode */
+      .dark-mode-label {
+        font-size: 14px;
+        color: #666;
+        margin-top: 5px;
+        font-weight: 500;
+        color: inherit;
       }
     </style>
   </head>
-  <body>
+  <body class="dark">
+    <!-- Dark mode default -->
     <div class="container">
+      <h1>Navigation</h1>
       <a href="time-management-ielts/index.html" class="button">IELTS Timer</a>
-      <a href="developertype/index.html" class="button">Developer Type</a>
+      <a href="textFormatter/index.html" class="button">Text Formatter</a>
       <a href="uno-score-tracker/index.html" class="button">Uno</a>
       <a href="readingTimer/index.html" class="button"
         >Reading Pomodoro Timer</a
       >
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
