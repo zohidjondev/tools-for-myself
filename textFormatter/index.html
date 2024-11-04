@@ -1,48 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rounded Text Formatter</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Formatter with Dark Mode</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <label for="inputText">Enter your text:</label>
+    <textarea id="inputText" placeholder="Enter text here"></textarea>
+
+    <label for="multiplierInput">Multiplier:</label>
+    <input
+      id="multiplierInput"
+      type="number"
+      value="3"
+      placeholder="Multiplier"
     />
-  </head>
-  <body class="dark">
-    <div id="customAlert" class="custom-alert">
-      Formatted text copied to clipboard!
-    </div>
 
-    <!-- Set dark mode as default by adding 'dark' class -->
-    <div class="container">
-      <h1>Text Formatter</h1>
-      <textarea id="inputText" placeholder="Enter your text here..."></textarea>
-      <button onclick="processText()">Format Text</button>
+    <button id="darkModeToggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
-      <div id="output">
-        <h3>Formatted Text:</h3>
-        <p id="formattedText"></p>
-        <button id="copyButton" onclick="copyToClipboard()">
-          Copy to Clipboard
-        </button>
-        <h3>Word Count:</h3>
-        <p id="wordCount"></p>
-      </div>
+    <div id="formattedText" class="output"></div>
+    <div id="wordCount" class="output result">Click to copy result</div>
+  </div>
 
-      <label class="switch">
-        <input
-          type="checkbox"
-          id="darkModeToggle"
-          onclick="toggleDarkMode()"
-          checked
-        />
-        <!-- Checkbox is checked by default -->
-        <span class="slider round"></span>
-      </label>
-      <p class="dark-mode-label">Dark Mode</p>
-    </div>
-    <script src="script.js"></script>
-  </body>
+  <!-- Custom Alert Notification -->
+  <div id="customAlert" class="custom-alert">Notification message here</div>
+
+  <script src="script.js"></script>
+</body>
 </html>
