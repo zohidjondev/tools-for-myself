@@ -26,8 +26,8 @@ function processText() {
   let wordCount = formattedText === "" ? 0 : formattedText.split(" ").length;
 
   document.getElementById("formattedText").textContent = formattedText;
-  document.getElementById("wordCount").textContent = `${wordCount} * 5 = ${
-    wordCount * 5
+  document.getElementById("wordCount").textContent = `${wordCount} * 3 = ${
+    wordCount * 3
   }`;
 }
 
