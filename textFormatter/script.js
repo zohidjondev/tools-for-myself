@@ -1,4 +1,3 @@
-// Check for dark mode preference in localStorage
 document.addEventListener("DOMContentLoaded", () => {
   const darkModeEnabled = localStorage.getItem("darkMode") === "enabled";
   document.body.classList.toggle("dark", darkModeEnabled);
@@ -18,7 +17,12 @@ function toggleDarkMode() {
 
 function processText() {
   let inputText = document.getElementById("inputText").value;
-  let formattedText = inputText.replace(/\s+/g, " ").trim();
+
+  // Remove numbers and periods following them
+  let formattedText = inputText
+    .replace(/\d+\.\s*/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
   let wordCount = formattedText === "" ? 0 : formattedText.split(" ").length;
 
   document.getElementById("formattedText").textContent = formattedText;
@@ -32,9 +36,21 @@ function copyToClipboard() {
   navigator.clipboard
     .writeText(formattedText)
     .then(() => {
-      alert("Formatted text copied to clipboard!");
+      showCustomAlert("Formatted text copied to clipboard!");
     })
     .catch((err) => {
       console.error("Failed to copy text: ", err);
+      showCustomAlert("Failed to copy text. Please try again.");
     });
+}
+
+function showCustomAlert(message) {
+  const alertBox = document.getElementById("customAlert");
+  alertBox.textContent = message; // Set the custom message
+  alertBox.classList.add("show"); // Show the alert with animation
+
+  // Hide the alert after 3 seconds
+  setTimeout(() => {
+    alertBox.classList.remove("show");
+  }, 3000);
 }
