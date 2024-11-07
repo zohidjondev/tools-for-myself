@@ -26,10 +26,6 @@ function processText() {
   let wordCount = formattedText === "" ? 0 : formattedText.split(" ").length;
 
   document.getElementById("formattedText").textContent = formattedText;
-  document.getElementById("wordCount").textContent = `
-  ${wordCount} * 10 = ${wordCount * 10} or 
-  ${wordCount} * 5 = ${wordCount * 5} or 
-  `;
 }
 
 function copyToClipboard() {
