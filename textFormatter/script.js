@@ -18,14 +18,14 @@ function toggleDarkMode() {
 function processText() {
   let inputText = document.getElementById("inputText").value;
 
-  // Remove numbers and periods following them
+  // Regular expression to match single words or multi-word expressions
   let formattedText = inputText
-    .replace(/\d+\.\s*/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-  let wordCount = formattedText === "" ? 0 : formattedText.split(" ").length;
+    .split("\n") // Split input by new lines
+    .map((item) => item.replace(/^\d+\.\s*/, "").trim()) // Remove numbering and trim spaces
+    .filter((item) => item.length > 0) // Skip empty lines
+    .join("|"); // Join each word/expression with '|'
 
-  document.getElementById("formattedText").textContent = formattedText;
+  document.getElementById("formattedText").textContent = `${formattedText}`;
 }
 
 function copyToClipboard() {
