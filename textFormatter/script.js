@@ -18,12 +18,13 @@ function toggleDarkMode() {
 function processText() {
   let inputText = document.getElementById("inputText").value;
 
-  // Regular expression to match single words or multi-word expressions
+  // Process the input text
   let formattedText = inputText
     .split("\n") // Split input by new lines
     .map((item) => item.replace(/^\d+\.\s*/, "").trim()) // Remove numbering and trim spaces
     .filter((item) => item.length > 0) // Skip empty lines
-    .join("|"); // Join each word/expression with '|'
+    .map((word) => Array(20).fill(word).join(" ")) // Repeat each word 20 times
+    .join("|"); // Join the results with '|'
 
   document.getElementById("formattedText").textContent = `${formattedText}`;
 }
