@@ -17,16 +17,18 @@ function toggleDarkMode() {
 
 function processText() {
   let inputText = document.getElementById("inputText").value;
+  let repeatCount =
+    parseInt(document.getElementById("repeatCount").value, 10) || 10; // Default to 10 if invalid
 
   // Process the input text
   let formattedText = inputText
     .split("\n") // Split input by new lines
     .map((item) => item.replace(/^\d+\.\s*/, "").trim()) // Remove numbering and trim spaces
     .filter((item) => item.length > 0) // Skip empty lines
-    .map((word) => Array(10).fill(word).join(" ")) // Repeat each word 20 times
+    .map((word) => Array(repeatCount).fill(word).join(" ")) // Repeat each word the specified number of times
     .join("|"); // Join the results with '|'
 
-  document.getElementById("formattedText").textContent = `${formattedText}`;
+  document.getElementById("formattedText").textContent = formattedText;
 }
 
 function copyToClipboard() {

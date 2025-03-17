@@ -18,8 +18,11 @@
     <div class="container">
       <h1>Text Formatter</h1>
       <textarea id="inputText" placeholder="Enter your text here..."></textarea>
-      <button onclick="processText()">Format Text</button>
 
+      <label for="repeatCount">Repeat Count:</label>
+      <input type="number" id="repeatCount" min="1" value="10" />
+
+      <button onclick="processText()">Format Text</button>
       <div id="output">
         <h3>Formatted Text:</h3>
         <p id="formattedText"></p>
